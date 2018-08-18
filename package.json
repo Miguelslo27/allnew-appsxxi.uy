@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "merge-stream": "^1.0.1"
+  },
   "devDependencies": {
     "browser-sync": "^2.24.6",
     "gulp": "^3.9.1",
