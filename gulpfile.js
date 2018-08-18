@@ -11,6 +11,12 @@ gulp.task('html', function() {
   .pipe(gulp.dest('.tmp'));
 });
 
+gulp.task('html:prod', function() {
+  return gulp
+  .src('src/index.html')
+  .pipe(gulp.dest('dist'));
+});
+
 gulp.task('sass', function() {
   return gulp
   .src('src/styles.scss') // lee el archivo sass
@@ -20,6 +26,14 @@ gulp.task('sass', function() {
   .pipe(sourcemap.write()) // Escribe las referencias luego de compilar
   .pipe(gulp.dest('.tmp')) // guarda el archivo css compilado en .tmp
   .pipe(reload({stream: true})); // recarga el navegador
+});
+
+gulp.task('sass:prod', function() {
+  return gulp
+  .src('src/styles.scss')
+  .pipe(sass().on('error', sass.logError))
+  .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
+  .pipe(gulp.dest('dist'));
 });
 
 gulp.task('watch', function() {
@@ -37,5 +51,7 @@ gulp.task('serve', ['html', 'sass'], function() {
 
   gulp.start('watch');
 });
+
+gulp.task('build', ['html:prod', 'sass:prod']);
 
 gulp.task('default', ['sass']);
