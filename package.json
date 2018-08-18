@@ -9,10 +9,13 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.4"
+    "gulp-sourcemaps": "^2.6.4",
+    "http-server": "^0.11.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ./dist",
+    "postinstall": "gulp"
   },
   "repository": {
     "type": "git",
