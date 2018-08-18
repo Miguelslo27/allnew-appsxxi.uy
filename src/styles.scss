@@ -1,5 +1,13 @@
-$bgcolor: #ddd;
+::-webkit-scrollbar-thumb {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #ddd;
+  min-height: 40px;
+}
 
-body {
-  background-color: $bgcolor;
+::-webkit-scrollbar {
+  background: transparent;
+  height: 8px;
+  width: 8px;
 }

@@ -19,7 +19,11 @@ gulp.task('statics', function() {
   .src('src/images/**/*', {base: 'src'})
   .pipe(gulp.dest('.tmp'));
 
-  return merge(roothtmls, assets, images);
+  var favicon = gulp
+  .src('src/favicon.ico', {base: 'src'})
+  .pipe(gulp.dest('.tmp'));
+
+  return merge(roothtmls, assets, images, favicon);
 });
 
 gulp.task('statics:prod', function() {
@@ -35,7 +39,11 @@ gulp.task('statics:prod', function() {
   .src('src/images/**/*', {base: 'src'})
   .pipe(gulp.dest('dist'));
 
-  return merge(roothtmls, assets, images);
+  var favicon = gulp
+  .src('src/favicon.ico', {base: 'src'})
+  .pipe(gulp.dest('dist'));
+
+  return merge(roothtmls, assets, images, favicon);
 });
 
 gulp.task('sass', function() {
@@ -59,7 +67,7 @@ gulp.task('sass:prod', function() {
 
 gulp.task('watch', function() {
   gulp.watch('src/styles.scss', ['sass']);
-  gulp.watch('src/*.html', ['statics']);
+  gulp.watch('src/**/*', ['statics']);
   gulp.watch('.tmp/*html').on('change', reload);
 });
 
