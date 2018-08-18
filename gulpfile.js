@@ -54,4 +54,4 @@ gulp.task('serve', ['html', 'sass'], function() {
 
 gulp.task('build', ['html:prod', 'sass:prod']);
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['html', 'sass']);
