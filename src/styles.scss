@@ -34,6 +34,10 @@ a {
   }
 }
 
+.split {
+  border-top: 2px solid _palette(null, border-bg);
+}
+
 #menu {
   right: -20em;
   left: auto;
