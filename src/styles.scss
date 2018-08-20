@@ -17,15 +17,21 @@
   width: 8px;
 }
 
-.logo {
-  margin-right: auto;
-  display: flex;
-  align-items: center;
+a {
+  color: _palette(accent1, fg) !important;
 }
 
-#header > a[href="#menu"] {
-  margin-right: 0;
-  padding-left: 0;
+#header {
+  .logo {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  > a[href="#menu"] {
+    margin-right: 0;
+    padding-left: 0;
+  }
 }
 
 #menu {
