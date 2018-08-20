@@ -7,67 +7,82 @@ var autoprefixer = require('gulp-autoprefixer');
 var reload = browser.reload;
 
 gulp.task('statics', function() {
-  var roothtmls = gulp
-  .src('src/*.html')
+  return gulp
+  .src([
+    'src/*.html',
+    'src/favicon.ico',
+    'src/assets/fonts/*',
+    'src/assets/js/*',
+    'src/assets/css/images/**/*',
+    'src/assets/css/font-awesome.min.css',
+    'src/images/**/*'
+  ], {base: 'src'})
   .pipe(gulp.dest('.tmp'));
-
-  var assets = gulp
-  .src('src/assets/**/*', {base: 'src'})
-  .pipe(gulp.dest('.tmp'));
-
-  var images = gulp
-  .src('src/images/**/*', {base: 'src'})
-  .pipe(gulp.dest('.tmp'));
-
-  var favicon = gulp
-  .src('src/favicon.ico', {base: 'src'})
-  .pipe(gulp.dest('.tmp'));
-
-  return merge(roothtmls, assets, images, favicon);
 });
 
 gulp.task('statics:prod', function() {
-  var roothtmls = gulp
-  .src('src/*.html')
+  return gulp
+  .src([
+    'src/*.html',
+    'src/favicon.ico',
+    'src/assets/fonts/*',
+    'src/assets/js/*',
+    'src/assets/css/images/**/*',
+    'src/assets/css/font-awesome.min.css',
+    'src/images/**/*'
+  ], {base: 'src'})
   .pipe(gulp.dest('dist'));
-
-  var assets = gulp
-  .src('src/assets/**/*', {base: 'src'})
-  .pipe(gulp.dest('dist'));
-
-  var images = gulp
-  .src('src/images/**/*', {base: 'src'})
-  .pipe(gulp.dest('dist'));
-
-  var favicon = gulp
-  .src('src/favicon.ico', {base: 'src'})
-  .pipe(gulp.dest('dist'));
-
-  return merge(roothtmls, assets, images, favicon);
 });
 
 gulp.task('sass', function() {
-  return gulp
-  .src('src/styles.scss') // lee el archivo sass
+  let styles = gulp
+  .src(['src/styles.scss']) // lee el archivo sass
   .pipe(sourcemap.init()) // Genera una referencia de los estilos en sass
   .pipe(sass().on('error', sass.logError)) // compila el archivo sass a css y si hay un error, lo muestra en la consola
   .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false})) // Agrega los prefijos de las reglas css por navegador
   .pipe(sourcemap.write()) // Escribe las referencias luego de compilar
-  .pipe(gulp.dest('.tmp')) // guarda el archivo css compilado en .tmp
-  .pipe(reload({stream: true})); // recarga el navegador
+  .pipe(gulp.dest('.tmp/assets/css')); // guarda el archivo css compilado en .tmp
+
+  let templateStyes = gulp
+  .src([
+    'src/assets/sass/ie8.scss',
+    'src/assets/sass/ie9.scss',
+    'src/assets/sass/main.scss'
+  ]) // lee el archivo sass
+  .pipe(sourcemap.init()) // Genera una referencia de los estilos en sass
+  .pipe(sass().on('error', sass.logError)) // compila el archivo sass a css y si hay un error, lo muestra en la consola
+  .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false})) // Agrega los prefijos de las reglas css por navegador
+  .pipe(sourcemap.write()) // Escribe las referencias luego de compilar
+  .pipe(gulp.dest('.tmp/assets/css')); // guarda el archivo css compilado en .tmp
+
+  return merge(styles, templateStyes)
+  .pipe(reload({stream: true}));
 });
 
 gulp.task('sass:prod', function() {
-  return gulp
-  .src('src/styles.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
-  .pipe(gulp.dest('dist'));
+  let styles = gulp
+  .src(['src/styles.scss']) // lee el archivo sass
+  .pipe(sass().on('error', sass.logError)) // compila el archivo sass a css y si hay un error, lo muestra en la consola
+  .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false})) // Agrega los prefijos de las reglas css por navegador
+  .pipe(gulp.dest('dist/assets/css')); // guarda el archivo css compilado en .tmp
+
+  let templateStyes = gulp
+  .src([
+    'src/assets/sass/ie8.scss',
+    'src/assets/sass/ie9.scss',
+    'src/assets/sass/main.scss'
+  ]) // lee el archivo sass
+  .pipe(sass().on('error', sass.logError)) // compila el archivo sass a css y si hay un error, lo muestra en la consola
+  .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false})) // Agrega los prefijos de las reglas css por navegador
+  .pipe(gulp.dest('dist/assets/css')); // guarda el archivo css compilado en .tmp
+
+  return merge(styles, templateStyes)
+  .pipe(reload({stream: true}));
 });
 
 gulp.task('watch', function() {
   gulp.watch('src/styles.scss', ['sass']);
-  gulp.watch('src/**/*', ['statics']);
+  gulp.watch('src/**/*.html', ['statics']);
   gulp.watch('.tmp/*html').on('change', reload);
 });
 

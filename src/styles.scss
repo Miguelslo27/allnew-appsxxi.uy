@@ -1,3 +1,8 @@
+@import 'src/assets/sass/libs/vars';
+@import 'src/assets/sass/libs/functions';
+@import 'src/assets/sass/libs/mixins';
+@import 'src/assets/sass/libs/skel';
+
 ::-webkit-scrollbar-thumb {
   border: none;
   -webkit-box-shadow: none;
@@ -10,4 +15,48 @@
   background: transparent;
   height: 8px;
   width: 8px;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+#header > a[href="#menu"] {
+  margin-right: 0;
+  padding-left: 0;
+}
+
+#menu {
+  right: -20em;
+  left: auto;
+  transform: initial;
+  transition: right .5s ease, box-shadow .5s ease, visibility .5s;
+
+  &.visible {
+    right: 0;
+  }
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+$xlarge: 'max-width: 1680px';
+$large: 'max-width: 1280px';
+$medium: 'max-width: 980px';
+$small: 'max-width: 736px';
+$xsmall: 'max-width: 480px';
+
+@media ($small) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
 }
