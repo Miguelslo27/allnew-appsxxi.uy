@@ -22,20 +22,52 @@ a {
 }
 
 #header {
-  .logo {
-    margin-right: auto;
-    display: flex;
-    align-items: center;
+  &:not(.alt) {
+    .big-logo {
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      width: 200px;
+      
+      img {
+        max-width: 100%;
+      }
+    }
+    .logo {
+      display: none;
+    }
   }
-  
+  &.alt {
+    .big-logo {
+      display: none;
+    }
+    .logo {
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+    }
+  }
   > a[href="#menu"] {
     margin-right: 0;
     padding-left: 0;
   }
 }
 
+#banner {
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .split {
   border-top: 2px solid _palette(null, border-bg);
+}
+
+#footer .copyright {
+  color: #333;
 }
 
 #menu {
@@ -64,6 +96,18 @@ $small: 'max-width: 736px';
 $xsmall: 'max-width: 480px';
 
 @media ($small) {
+  #header {
+    &:not(.alt) {
+      .big-logo {
+        width: 100px;
+        
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  
   .desktop {
     display: none;
   }
