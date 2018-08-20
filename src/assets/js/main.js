@@ -42,7 +42,7 @@
 
 		// Scrolly.
 			$('.scrolly').scrolly({
-				offset: function() { return $header.outerHeight() }
+				offset: function() { return 64 }
 			});
 
 		// Menu.

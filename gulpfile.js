@@ -74,7 +74,8 @@ gulp.task('sass:prod', function() {
 
 gulp.task('watch', function() {
   gulp.watch('src/*.scss', ['sass']);
-  gulp.watch('src/assets/sass/**/*.scss', ['sass']);
+  gulp.watch('src/assets/**/*.*', ['statics', 'sass']);
+  gulp.watch('src/images/**/*.*', ['statics']);
   gulp.watch('src/**/*.html', ['statics']);
   gulp.watch('.tmp/*html').on('change', reload);
 });
