@@ -11,6 +11,7 @@
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   </head>
   <body id="home" class="landing">
 
@@ -29,7 +30,7 @@
         <a href="#tech" class="desktop scrolly">Tecnologiías</a>
         <a href="#aboutus" class="desktop scrolly">Sobre Nosotros</a>
         
-        <a href="#menu" class="mobile"></a>
+        <a href="#menu" class="fa fa-bars menu mobile"></a>
       </header>
 
     <!-- Nav -->
@@ -46,10 +47,12 @@
     <!-- Banner -->
       <section id="banner">
         <header class="major">
-          <span class="icon fa-code style3"></span>
+          <span class="iso">
+            <img src="/images/iso.png">
+          </span>
           <h1>¡Nos reinventamos!</h1>
           <h3>¡Hacelo vos también!</h3>
-          <p>Nuevos servicios, nuevos productos. Mismos profesionales.</p>
+          <h4>· Nuevos servicios · Nuevos productos · Mismos profesionales ·</h4>
         </header>
         <ul class="actions">
           <li><a href="#services" class="button scrolly">Continuar</a></li>
@@ -60,34 +63,37 @@
       <section id="services" class="wrapper style1 special">
         <div class="inner">
           <header class="major alt style2">
-            <h2>Augue sed pretium</h2>
-            <p>Consectetur nullam vel iaculis</p>
+            <h2>Servicios que impactan</h2>
+            <p>La calidad a tu alcance y el de tus clientes</p>
+            <ul class="actions">
+              <li><a href="#srvc-features" class="button special small scrolly">Saber más</a></li>
+            </ul>
           </header>
-          <section class="features">
+          <section id="srvc-features" class="features">
             <section>
-              <span class="icon fa-cubes style3"></span>
-              <h4>Justo magna</h4>
-              <p>Nulla imperdiet, lorem in pretium sed aliquet, lacus dui magna tristique lacus, vel convallis justo lectus in augue. Tempus pellentesque imperdiet et elementum.</p>
+              <span class="icon fa fa-laptop-code style1"></span>
+              <h4>Diseño y Desarrollo Web</h4>
+              <p>Diseñamos y desarrollamos bajo estrictos estándares de calidad con la tecnología más actual y demandada del mercado, enfocando nuestros esfuerzos en tú satisfacción y las necesidades de tu empresa.</p>
             </section>
             <section>
-              <span class="icon fa-diamond style4"></span>
-              <h4>Sed trisique</h4>
-              <p>Nulla imperdiet, lorem in pretium sed aliquet, lacus dui magna tristique lacus, vel convallis justo lectus in augue. Tempus pellentesque imperdiet et elementum.</p>
+              <span class="icon fa fa-palette style1"></span>
+              <h4>Diseño Gráfico Corporativo</h4>
+              <p>Diseñamos a tu imagen y semejanza. La identidad de tu empresa es tu identidad y es lo más importante para vos, lo sabemos y por eso diseñamos para generar impacto y visibilidad.</p>
             </section>
             <section>
-              <span class="icon fa-camera-retro style2"></span>
-              <h4>Lacus pretium</h4>
-              <p>Nulla imperdiet, lorem in pretium sed aliquet, lacus dui magna tristique lacus, vel convallis justo lectus in augue. Tempus pellentesque imperdiet et elementum.</p>
+              <span class="icon fa fa-mobile-alt style1"></span>
+              <h4>Diseño y Desarrollo Móvil</h4>
+              <p>Todos nuestros desarrollos son adaptables y se visualizan en todos los dispositivos, aún así brindamos un servicio exclusivo de diseño y desarrollo para dispositivos móviles que atrae a tu púbico más exigente.</p>
             </section>
             <section>
-              <span class="icon fa-cloud style3"></span>
-              <h4>Dui volutpat</h4>
-              <p>Nulla imperdiet, lorem in pretium sed aliquet, lacus dui magna tristique lacus, vel convallis justo lectus in augue. Tempus pellentesque imperdiet et elementum.</p>
+              <span class="icon fa fa-store-alt style1"></span>
+              <h4>Comercio Electrónico</h4>
+              <p>Con más de 8 años en el area de comercio electrónico, nuestra experiencia nos hace idóneos para llevar a tu tienda a la nube, conocemos el mercado y las necesidades de nuestros clientes y sus usuarios.</p>
             </section>
           </section>
           <footer class="major">
             <ul class="actions">
-              <li><a href="#" class="button">Learn More</a></li>
+              <li><a href="#portfolio" class="button scrolly">Mirar portafolio</a></li>
             </ul>
           </footer>
         </div>
@@ -97,26 +103,69 @@
       <section id="portfolio" class="wrapper style3 special">
         <div class="inner">
           <header class="major">
-            <h2>Convallis pretium</h2>
-            <p>Lorem ipsum lacus adipiscing</p>
+            <h2>Portafolios</h2>
+            <p>Estos clientes confían en nosotros</p>
           </header>
           <section class="spotlights">
             <section>
-              <span class="image"><img src="images/pic01.jpg" alt="" /></span>
-              <h4>Etiam consequat</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet, lorem in pretium aliquet, lacus dui tristique lacus, vel convallis justo lectus in augue. Tempus pellentesque iaculis imperdiet et elementum.</p>
+              <span class="image">
+                <a href="http://monique.com.uy" target="_blank">
+                  <img src="images/clients/monique/work-thumbnail.jpg" alt="Monique" />
+                </a>
+              </span>
+              <h4>Monique - Tienda mayorista</h4>
+              <p>Plataforma de eCommerce realizado con PHP/MySQL para backend, con Slim Framework los microservicios CRUD, HTML/CSS y JS para la interfaz y experiencia de usuario.</p>
               <ul class="actions">
-                <li><a href="#" class="button">Learn More</a></li>
+                <li><a href="http://monique.com.uy" target="_blank"  class="button">Visitar sitio</a></li>
               </ul>
             </section>
             <section>
-              <span class="image"><img src="images/pic02.jpg" alt="" /></span>
+              <span class="image">
+                <a href="http://seguroparavos.com.uy" target="_blank">
+                  <img src="images/clients/seguros/work-thumbnail.jpg" alt="Seguro Para Vos" />
+                </a>
+              </span>
+              <h4>Seguro Para Vos</h4>
+              <p>Plataforma Web para la contratasión de seguros de forma online. Backoffice realizado con PHP/MySQL y Laravel que incluye la gestión de formularios en pdf y toda la gestión de seguros. HTML5/CSS3 y JS con jQuery para la interfaz y experiencia de usuario.</p>
+              <ul class="actions">
+                <li><a href="http://seguroparavos.com.uy" target="_blank" class="button">Visitar sitio</a></li>
+              </ul>
+            </section>
+          </section>
+          
+          <section class="spotlights">
+            <section>
+              <span class="image">
+                <a href="http://infoagro.com.uy/" target="_blank">
+                  <img src="images/clients/infoagro/work-thumbnail.jpg" alt="Info Agro" />
+                </a>
+              </span>
+              <h4>Info Agro - Uruguay</h4>
+              <p>Sitio de noticias autogestionado, creado con WordPress, template desarrollado en HTML5 y CSS3 junto con jQuery para una excelente experiencia de usuario.</p>
+              <ul class="actions">
+                <li><a href="http://infoagro.com.uy/" target="_blank" class="button">Visitar sitio</a></li>
+              </ul>
+            </section>
+            <section>
+              <span class="image">
+                <a href="#aboutus" class="scrolly">
+                  <img src="images/plus-client.png" />
+                </a>
+              </span>
+              <h4>Solicitá tu presupuesto</h4>
+              <p>Sumate a nuestro selecto grupo de clientes y conversemos sobre tu proyecto.</p>
+              <ul class="actions">
+                <li><a href="#aboutus" class="button scrolly">Más información</a></li>
+              </ul>
+            </section>
+            <!-- <section>
+              <span class="image"><img src="images/clients/monique/work-thumbnail.jpg" alt="Monique" /></span>
               <h4>Lacus elementum</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet, lorem in pretium aliquet, lacus dui tristique lacus, vel convallis justo lectus in augue. Tempus pellentesque iaculis imperdiet et elementum.</p>
               <ul class="actions">
                 <li><a href="#" class="button">Learn More</a></li>
               </ul>
-            </section>
+            </section> -->
           </section>
         </div>
       </section>
@@ -182,12 +231,12 @@
     <!-- Footer -->
       <footer id="footer">
         <ul class="alt-icons">
-          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-          <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-          <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-          <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-          <li><a href="#" class="icon fa-phone"><span class="label">Phone</span></a></li>
-          <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+          <li><a href="#" class="icon fab fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon fab fa-facebook"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon fab fa-linkedin"><span class="label">LinkedIn</span></a></li>
+          <li><a href="#" class="icon fab fa-github"><span class="label">GitHub</span></a></li>
+          <li><a href="#" class="icon fa fa-phone"><span class="label">Phone</span></a></li>
+          <li><a href="#" class="icon fa fa-envelope"><span class="label">Email</span></a></li>
         </ul>
         <ul class="menu">
           <li><a href="#">Terms of Use</a></li>

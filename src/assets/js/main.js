@@ -47,7 +47,7 @@
 
 		// Menu.
 			$('#menu')
-				.append('<a href="#menu" class="close"></a>')
+				.append('<a href="#menu" class="fa fa-bars close mobile"></a>')
 				.appendTo($body)
 				.panel({
 					delay: 500,

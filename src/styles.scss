@@ -17,8 +17,27 @@
   width: 8px;
 }
 
+body.landing {
+  background-attachment: scroll, scroll, fixed !important;
+}
+
 a {
   color: _palette(accent1, fg) !important;
+}
+
+ul {
+  margin: 0;
+}
+
+.wrapper.style1 button.special,
+.wrapper.style1 .button.special {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff !important;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.075);
+  }
 }
 
 #header {
@@ -27,7 +46,7 @@ a {
       margin-right: auto;
       display: flex;
       align-items: center;
-      width: 200px;
+      width: 150px;
       
       img {
         max-width: 100%;
@@ -47,27 +66,62 @@ a {
       align-items: center;
     }
   }
-  > a[href="#menu"] {
+  > a.menu {
+    font-weight: 900;
     margin-right: 0;
     padding-left: 0;
+    width: 3em;
+    height: 3em;
+    text-align: center;
+    font-size: 16px;
   }
 }
 
 #banner {
-  padding: 0;
+  padding: 3em 2em;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .iso {
+    display: block;
+    margin-bottom: 1em;
+  }
 }
 
 .split {
   border-top: 2px solid _palette(null, border-bg);
 }
 
-#footer .copyright {
-  color: #333;
+.spotlights {
+  .image {
+    box-shadow: 0 3px 10px -5px rgba(0,0,0,.8);
+    transition: box-shadow .5s ease;
+
+    img {
+      max-width: 100%;
+    }
+    
+    &:hover {
+      box-shadow: 0 5px 40px -5px rgba(0,0,0,.8);
+    }
+  }
+}
+
+#footer {
+  .copyright {
+    color: #333;
+  }
+
+  .alt-icons {
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 #menu {
@@ -86,7 +140,13 @@ a {
 }
 
 .mobile {
-  display: none;
+  display: none !important;
+}
+
+#menu {
+  .close {
+    font-weight: 900;
+  }
 }
 
 $xlarge: 'max-width: 1680px';
@@ -96,6 +156,14 @@ $small: 'max-width: 736px';
 $xsmall: 'max-width: 480px';
 
 @media ($small) {
+  .desktop {
+    display: none !important;
+  }
+  
+  .mobile {
+    display: initial !important;
+  }
+  
   #header {
     &:not(.alt) {
       .big-logo {
@@ -107,12 +175,10 @@ $xsmall: 'max-width: 480px';
       }
     }
   }
-  
-  .desktop {
-    display: none;
-  }
 
-  .mobile {
-    display: block;
+  .features > section {
+    .icon {
+      margin-bottom: 1em;
+    }
   }
 }
