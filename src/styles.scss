@@ -94,6 +94,14 @@ ul {
     margin-bottom: 1em;
     width: 100%;
   }
+
+  header {
+    margin-bottom: 1.5em;
+  }
+
+  .actions {
+    margin: 0;
+  }
 }
 
 .split {
@@ -184,6 +192,8 @@ $xsmall: 'max-width: 480px';
   }
   
   #header {
+    padding: 1em;
+    
     &:not(.alt) {
       .big-logo {
         width: 100px;
@@ -193,9 +203,12 @@ $xsmall: 'max-width: 480px';
         }
       }
     }
+
+    &.alt {
+      padding: .5em;
+    }
   }
 
-  // TODO
   #banner {
     .iso {
       img {
@@ -212,7 +225,7 @@ $xsmall: 'max-width: 480px';
     }
 
     h4 {
-      font-size: 1em;
+      font-size: .8em;
     }
   }
 
