@@ -335,6 +335,15 @@ $xsmall: 'max-width: 480px';
       margin-bottom: 1em;
     }
   }
+
+  .spotlights {
+    display: flex;
+    margin-bottom: .2em;
+
+    section {
+      margin-bottom: .2em;
+    }
+  }
 }
 
 @keyframes aparecer {
