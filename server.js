@@ -26,7 +26,7 @@ app.post('/send', function (req, res) {
   const msg = {
     to: 'miguel.sosa@appsxxi.com',
     from: req.body.name + ' <' + req.body.email + '>',
-    subject: 'Mensaje desde AppsXXI de ' + req.body.name,
+    subject: 'AppsXXI - ' + req.body.name,
     text: req.body.message,
     html: '<strong>' + req.body.message + '</strong>',
   };
